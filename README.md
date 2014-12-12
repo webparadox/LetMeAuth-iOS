@@ -20,6 +20,17 @@ If you want to pass access tokens to backend, you must follow these guidelines:
 * Send access tokens over SSL secured connections (https).
 * Send access tokens in the header or as POST data. Do not send as query parameters on GET requests.
 
+## Example usage
+
+[Example of integration for iOS](https://github.com/webparadox/LetMeAuth-Integration-iOS) based on LMAStubProvider.
+
+## Providers, supported by maintainer
+
+* [Facebook](https://github.com/webparadox/LetMeAuth-FacebookSDK-iOS)
+* [Twitter](https://github.com/webparadox/LetMeAuth-STTwitter)
+* [Google+](https://github.com/webparadox/LetMeAuth-GooglePlusSDK-iOS)
+* [Vkontakte](https://github.com/webparadox/LetMeAuth-VkontakteSDK-iOS)
+
 ## Contact
 
 Alexey Aleshkov
