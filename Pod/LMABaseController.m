@@ -35,6 +35,8 @@
 
     self.providerClassesLock = [[NSRecursiveLock alloc] init];
     self.providerClasses = [[NSMutableDictionary alloc] init];
+    self.requestClassesLock = [[NSRecursiveLock alloc] init];
+    self.requestClasses = [[NSMutableDictionary alloc] init];
     self.requestsLock = [[NSRecursiveLock alloc] init];
     self.requests = [[NSMutableArray alloc] init];
 
