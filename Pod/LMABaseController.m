@@ -165,27 +165,37 @@
 {
     BOOL result = NO;
 
-    // find suitable request
+    // Prevent array mutations when iterating
+    // Make strong references to requests
+    NSArray *requests;
     [self.requestsLock lock];
-    for (id<LMARequest> request in self.requests) {
+    requests = [self.requests copy];
+    [self.requestsLock unlock];
+
+    // find suitable request
+    for (id<LMARequest> request in requests) {
         if ([request handleOpenURL:url sourceApplication:sourceApplication annotation:annotation]) {
             result = YES;
             break;
         }
     }
-    [self.requestsLock unlock];
 
     return result;
 }
 
 - (void)handleDidBecomeActive
 {
-    // cancel all requests
+    // Prevent array mutations when iterating
+    // Make strong references to requests
+    NSArray *requests;
     [self.requestsLock lock];
-    for (id<LMARequest> request in self.requests) {
+    requests = [self.requests copy];
+    [self.requestsLock unlock];
+
+    // cancel all requests
+    for (id<LMARequest> request in requests) {
         [request handleDidBecomeActive];
     }
-    [self.requestsLock unlock];
 }
 
 #pragma mark Requests
