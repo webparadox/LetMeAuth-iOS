@@ -39,9 +39,12 @@
 - (void)cancel;
 
 /// Return YES if provider can handle url from application, otherwise - NO
+/// Used for external (like Safari) authorization
 /// Called by request
 - (BOOL)handleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
+/// Return YES if provider handled event
+/// Used for external (like Safari) authorization
 /// Called by request
-- (void)handleDidBecomeActive;
+- (BOOL)handleDidBecomeActive;
 
 @end

@@ -66,9 +66,11 @@ typedef NS_ENUM(NSInteger, LMABaseRequestState) {
     if (self.state != LMABaseRequestStateStarted) {
         return NO;
     }
-    self.state = LMABaseRequestStateTriggered;
 
     BOOL result = [self.provider handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (result) {
+        self.state = LMABaseRequestStateTriggered;
+    }
 
     return result;
 }
@@ -78,9 +80,11 @@ typedef NS_ENUM(NSInteger, LMABaseRequestState) {
     if (self.state != LMABaseRequestStateStarted) {
         return;
     }
-    self.state = LMABaseRequestStateTriggered;
 
-    [self.provider handleDidBecomeActive];
+    BOOL result = [self.provider handleDidBecomeActive];
+    if (result) {
+        self.state = LMABaseRequestStateTriggered;
+    }
 }
 
 - (void)finish

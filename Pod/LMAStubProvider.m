@@ -105,15 +105,17 @@ NSString *const LMAStubProviderErrorKey = @"LMAStubProviderErrorKey";
     return NO;
 }
 
-- (void)handleDidBecomeActive
+- (BOOL)handleDidBecomeActive
 {
     if (self.finished) {
-        return;
+        return YES;
     }
 
     self.finished = YES;
 
     [self.providerDelegate providerDidCancel:self];
+
+    return YES;
 }
 
 @end
