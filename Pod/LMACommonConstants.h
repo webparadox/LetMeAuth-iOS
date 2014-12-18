@@ -16,3 +16,5 @@ extern NSString *const LMAUserId;
 extern NSString *const LMAExpiresIn;
 // NSDate
 extern NSString *const LMAExpiresAt;
+// NSDate
+extern NSString *const LMAIssuedAt;

@@ -13,3 +13,4 @@
 NSString *const LMAUserId = @"user_id";
 NSString *const LMAExpiresIn = @"expires_in";
 NSString *const LMAExpiresAt = @"expires_at";
+NSString *const LMAIssuedAt = @"issued_at";
