@@ -36,11 +36,6 @@ typedef NS_ENUM(NSInteger, LMABaseRequestState) {
 @synthesize error = _error;
 @synthesize completionBlock = _completionBlock;
 
-- (void)dealloc
-{
-    NSLog(@"dealloc");
-}
-
 - (void)start
 {
     if (self.state != LMABaseRequestStateNew) {
