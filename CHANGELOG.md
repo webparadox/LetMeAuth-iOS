@@ -1,3 +1,7 @@
+= 2.0.0 (2014.12.18)
+
+ * Return BOOL from handleDidBecomeActive. Return YES if provider handled event for external (like Safari) authorization
+
 = 1.1.1 (2014.12.18)
 
  * Add missing requestClasses initialization
